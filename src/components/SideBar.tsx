@@ -1,56 +1,123 @@
-import { FaHouse } from "react-icons/fa6";
-import { MdPushPin } from "react-icons/md";
-import { CgDetailsMore } from "react-icons/cg";
-import { IoSearch } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import { MdOutlinePersonOutline } from "react-icons/md";
+import { useState } from "react";
+import { MdPushPin, MdMoreVert } from "react-icons/md"; // Material Design Icons
+import {
+  HiOutlineHome,
+  HiOutlineSearch,
+  HiOutlinePlus,
+  HiOutlineHeart,
+  HiOutlineUser,
+} from "react-icons/hi";
 
 const SideBar = () => {
+  const [activeIcon, setActiveIcon] = useState("home");
+
+  const sideBarStyle = {
+    background: "rgb(10, 10, 10)",
+    fontSize: "1.6rem",
+    position: "fixed", // Make the sidebar fixed
+    top: 0,
+    left: 0,
+    width: "4%", // Set a fixed width for the sidebar
+    height: "100vh", // Full height of the viewport
+    zIndex: 1000, // Ensure it stays above other content
+  };
+
+  const iconStyle = {
+    color: "rgb(86, 86, 86)",
+  };
+
+  const active = {
+    color: "white",
+  };
+
+  // Function to handle icon clicks
+  const handleIconClick = (iconName) => {
+    setActiveIcon(iconName);
+  };
+
   return (
-    <div className="w-15 bg-black text-white h-screen flex flex-col justify-between items-center ">
+    <div
+      style={sideBarStyle}
+      className="text-white flex flex-col justify-between items-center"
+    >
+      {/* Top Logo */}
       <div className="mt-5 text-3xl">
         <h1>B</h1>
       </div>
-      <div className="flex-col ">
-        <ul>
+
+      {/* Middle Icons */}
+      <div style={iconStyle} className="flex flex-col items-center gap-y-10">
+        <ul className="flex flex-col items-center gap-y-10">
           <li>
-            <a href="#">
-              <FaHouse />
+            <a
+              href="#"
+              onClick={() => handleIconClick("home")}
+              style={activeIcon === "home" ? active : {}}
+            >
+              <HiOutlineHome />
             </a>
           </li>
           <li>
-            <a href="#">
-              <IoSearch />
+            <a
+              href="#"
+              onClick={() => handleIconClick("search")}
+              style={activeIcon === "search" ? active : {}}
+            >
+              <HiOutlineSearch />
             </a>
           </li>
           <li>
-            <a href="#">
-              <FaPlus />
+            <a
+              href="#"
+              onClick={() => handleIconClick("plus")}
+              style={activeIcon === "plus" ? active : {}}
+            >
+              <HiOutlinePlus />
             </a>
           </li>
           <li>
-            <a href="#">
-              <FaRegHeart />
+            <a
+              href="#"
+              onClick={() => handleIconClick("heart")}
+              style={activeIcon === "heart" ? active : {}}
+            >
+              <HiOutlineHeart />
             </a>
           </li>
           <li>
-            <a href="#">
-              <MdOutlinePersonOutline />
+            <a
+              href="#"
+              onClick={() => handleIconClick("profile")}
+              style={activeIcon === "profile" ? active : {}}
+            >
+              <HiOutlineUser />
             </a>
           </li>
         </ul>
       </div>
-      <div className="flex-col mb-15">
-        <ul>
+
+      {/* Bottom Icons */}
+      <div
+        style={iconStyle}
+        className="flex flex-col items-center gap-y-5 mb-7"
+      >
+        <ul className="flex flex-col items-center gap-y-5">
           <li>
-            <a href="#">
+            <a
+              href="#"
+              onClick={() => handleIconClick("pin")}
+              style={activeIcon === "pin" ? active : {}}
+            >
               <MdPushPin />
             </a>
           </li>
           <li>
-            <a href="#">
-              <CgDetailsMore />
+            <a
+              href="#"
+              onClick={() => handleIconClick("more")}
+              style={activeIcon === "more" ? active : {}}
+            >
+              <MdMoreVert />
             </a>
           </li>
         </ul>
