@@ -26,3 +26,33 @@ body {
   height: 40px;
   border-radius: 50px;
 }
+
+.post-icon {
+  padding: 10px;
+  border-radius: 15px;
+}
+.post-icon:hover {
+  background: rgb(30, 30, 30);
+}
+
+.loginStyle {
+  background-image: url(/src/assets/background.png);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+.login-style {
+  color: white;
+}
+
+.login-style input {
+  border: none;
+  background: rgb(30, 30, 30);
+}
+
+.login-style input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 0 1px rgb(62, 63, 63);
+}

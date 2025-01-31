@@ -1,4 +1,5 @@
 import Post from "./Post";
+import { Outlet, Link } from "react-router-dom";
 
 const ContentSection = () => {
   return (
@@ -25,8 +26,10 @@ const ContentSection = () => {
 
       {/* Login Button at Top Right */}
       <div className="absolute top-4 right-4 mr-8 bg-white rounded-[12px] pl-4 pr-4 mt-3.5   pt-1 pb-1.5 text-black font-semibold">
-        <a href="#">Log in</a>
+        {/* <a href="#">Log in</a> */}
+        <Link to="/login">Login</Link>
       </div>
+      <Outlet />
     </div>
   );
 };
