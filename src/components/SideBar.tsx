@@ -17,7 +17,7 @@ const SideBar = () => {
     position: "fixed", // Make the sidebar fixed
     top: 0,
     left: 0,
-    width: "4%", // Set a fixed width for the sidebar
+    width: "6%", // Set a fixed width for the sidebar
     height: "100vh", // Full height of the viewport
     zIndex: 1000, // Ensure it stays above other content
   };
@@ -38,16 +38,16 @@ const SideBar = () => {
   return (
     <div
       style={sideBarStyle}
-      className="text-white flex flex-col justify-between items-center"
+      className="text-white flex flex-col justify-between "
     >
       {/* Top Logo */}
-      <div className="mt-5 text-3xl">
+      <div className="mt-5 text-3xl flex justify-center">
         <h1>B</h1>
       </div>
 
       {/* Middle Icons */}
-      <div style={iconStyle} className="flex flex-col items-center gap-y-10">
-        <ul className="flex flex-col items-center gap-y-10">
+      <div style={iconStyle} className="flex flex-col">
+        <ul className="hover-effect flex flex-col  gap-y-5">
           <li>
             <a
               href="#"
@@ -66,7 +66,7 @@ const SideBar = () => {
               <HiOutlineSearch />
             </a>
           </li>
-          <li>
+          <li className="plus">
             <a
               href="#"
               onClick={() => handleIconClick("plus")}
@@ -97,11 +97,8 @@ const SideBar = () => {
       </div>
 
       {/* Bottom Icons */}
-      <div
-        style={iconStyle}
-        className="flex flex-col items-center gap-y-5 mb-7"
-      >
-        <ul className="flex flex-col items-center gap-y-5">
+      <div style={iconStyle} className="flex flex-col  gap-y-5 mb-7">
+        <ul className="hover-effect flex flex-col  gap-y-5">
           <li>
             <a
               href="#"

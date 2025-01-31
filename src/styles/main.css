@@ -4,3 +4,25 @@ body {
   background: rgb(10, 10, 10);
   overflow-x: hidden;
 }
+
+.hover-effect li {
+  /* background: red; */
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 13px;
+  height: 6vh;
+  border-radius: 10px;
+}
+
+.hover-effect li:hover,
+.plus {
+  background: rgb(23, 23, 23);
+}
+
+.profile-pic img {
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+}
